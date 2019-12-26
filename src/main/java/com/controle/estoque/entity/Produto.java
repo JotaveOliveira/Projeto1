@@ -41,9 +41,8 @@ public class Produto implements Serializable {
 	
 	public Produto() {};
 	
-	public Produto(Integer id, String nome, String categoria) {
+	public Produto(String nome, String categoria) {
 		super();
-		this.id = id;
 		this.nome = nome;
 		this.categoria = categoria;
 	}
