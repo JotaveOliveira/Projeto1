@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import com.controle.estoque.entity.Usuario;
@@ -17,7 +18,7 @@ public class UsuarioDao {
 		manager.persist(usuario);
 	}
 	public boolean ExistEmail(String email) {
-		 List<Usuario> usuarios = manager.createQuery("select u from Usuario u where u.email = :email", Usuario.class)
+		 List<Usuario> usuarios = manager.createQuery("SELECT U FROM Usuario u WHERE u.email = :email", Usuario.class)
 	                .setParameter("email", email).getResultList();
 
 	        if (!usuarios.isEmpty()) {
@@ -28,5 +29,9 @@ public class UsuarioDao {
 	@Transactional
 	public void update(Usuario usuario ) {
 		 manager.merge(usuario);
+	}
+	public List<Usuario> listar() {
+		TypedQuery<Usuario> query = manager.createQuery("SELECT u FROM Usuario u " , Usuario.class);
+		return query.getResultList();		
 	}
 }
