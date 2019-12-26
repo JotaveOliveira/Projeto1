@@ -74,6 +74,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+<<<<<<< HEAD
 
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
@@ -161,6 +162,8 @@
 
 
 
+=======
+>>>>>>> 0fb055d8028b80eeb06e7fad921f299f4bdb612f
 	</dependencies>
 
 	<build>
